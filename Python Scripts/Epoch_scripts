@@ -1,0 +1,28 @@
+#functions to epoch data for machine learning
+# create time intervals so that data can be analyzed 
+def create_time_intervals(onset):
+  print(len(onset))
+  intervals = []
+  prev = 0
+  for i in onset:
+   
+    intervals.append(i - prev)
+    prev = i
+  print(intervals)
+  return intervals
+
+def epoch_data(data, onset, description):
+  data = data.to_numpy()
+  a = np.array(data)
+  datapoints = []
+  for (i,j), value in np.ndenumerate(a):
+    index = 0
+    channels = []
+    while(index < 4):
+      channels.append(value)
+      print(" ")
+      index = index + 1
+    datapoints.append(channels)
+  intervals = create_time_intervals(onset)
+
+  #TODO: for each interval, cut off when datapoints * 0.05 > intervals
