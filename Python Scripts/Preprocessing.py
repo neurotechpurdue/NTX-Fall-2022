@@ -23,3 +23,5 @@ data_stamp = 'Testing Recordings\BrainFlow-RAW_2022-09-17_15-44-49_0.csv'
 
 data = pd.read_csv(data_path, skiprows=1)
 chnames = ['ch1', 'ch2', 'ch3', 'ch4', 'Timestamps']
+
+#a 
